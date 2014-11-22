@@ -6,50 +6,36 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 class RouteServiceProvider extends ServiceProvider {
 
 	/**
-	 * The controllers to scan for route annotations.
+	 * This namespace is applied to the controller routes in your routes file.
 	 *
-	 * @var array
+	 * In addition, it is set as the URL generator's root namespace.
+	 *
+	 * @var string
 	 */
-	protected $scan = [
-		'App\Http\Controllers\HomeController',
-		'App\Http\Controllers\Auth\AuthController',
-		'App\Http\Controllers\Auth\PasswordController',
-	];
+	protected $namespace = 'App\Http\Controllers';
 
 	/**
-	 * All of the application's route middleware keys.
-	 *
-	 * @var array
-	 */
-	protected $middleware = [
-		'auth' => 'App\Http\Middleware\Authenticated',
-		'auth.basic' => 'App\Http\Middleware\AuthenticatedWithBasicAuth',
-		'csrf' => 'App\Http\Middleware\CsrfTokenIsValid',
-		'guest' => 'App\Http\Middleware\IsGuest',
-	];
-
-	/**
-	 * Called before routes are registered.
-	 *
-	 * Register any model bindings or pattern based filters.
+	 * Define your route model bindings, pattern filters, etc.
 	 *
 	 * @param  \Illuminate\Routing\Router  $router
 	 * @return void
 	 */
-	public function before(Router $router)
+	public function boot(Router $router)
 	{
-		//
+		parent::boot($router);
+
+		// route model bindings
+		$router->model('pages', 'App\Data\Models\Page');
 	}
 
 	/**
 	 * Define the routes for the application.
 	 *
-	 * @param  \Illuminate\Routing\Router  $router
 	 * @return void
 	 */
-	public function map(Router $router)
+	public function map()
 	{
-		// require app_path('Http/routes.php');
+		$this->loadRoutesFrom(app_path('Http/routes.php'));
 	}
 
 }
