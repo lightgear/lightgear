@@ -141,6 +141,15 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+		/**
+		 * Optional Laravel packages
+		 */
+		'Illuminate\Html\HtmlServiceProvider',
+
+		/**
+		 * Third-party packages
+		 */
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 	],
 
 	/*
@@ -198,6 +207,8 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		'Form'		=> 'Illuminate\Html\FormFacade'
 
 	],
 
