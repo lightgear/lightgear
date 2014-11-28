@@ -20,18 +20,20 @@ class Pages extends Controller {
      * Show the form for creating a new resource.
      *
      */
-    public function create()
+    public function create(Page $page)
     {
-        return 'Create page form';
+        return view('pages.create', ['page' => $page]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      */
-    public function store(PageFormRequest $request)
+    public function store(PageFormRequest $request, Page $page)
     {
-        //
+        $page->create($request->all());
+
+        return redirect('pages');
     }
 
     /**
@@ -41,7 +43,7 @@ class Pages extends Controller {
      */
     public function show($page)
     {
-        dd($page->id);
+        return view('pages.show', ['page' => $page]);
     }
 
     /**
@@ -49,9 +51,9 @@ class Pages extends Controller {
      *
      * @param  int  $id
      */
-    public function edit($id)
+    public function edit($page)
     {
-        //
+        return view('pages.edit', ['page' => $page]);
     }
 
     /**
@@ -59,18 +61,24 @@ class Pages extends Controller {
      *
      * @param  int  $id
      */
-    public function update($id)
+    public function update(PageFormRequest $request, Page $page)
     {
-        //
+        $page->update($request->all());
+
+        return redirect('pages');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param $page
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @internal param int $id
      */
-    public function destroy($id)
+    public function destroy($page)
     {
-        //
+        $page->delete();
+
+        return redirect('pages');
     }
 }
