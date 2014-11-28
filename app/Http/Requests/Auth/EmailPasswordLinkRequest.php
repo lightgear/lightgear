@@ -1,8 +1,8 @@
-<?php namespace App\Http\Requests;
+<?php namespace App\Http\Requests\Auth;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Request;
 
-class PageFormRequest extends FormRequest {
+class EmailPasswordLinkRequest extends Request {
 
 	/**
 	 * Get the validation rules that apply to the request.
@@ -12,7 +12,7 @@ class PageFormRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-			'title' => 'required',
+			'email' => 'required',
 		];
 	}
 
@@ -23,7 +23,6 @@ class PageFormRequest extends FormRequest {
 	 */
 	public function authorize()
 	{
-		// TODO: use real auth
 		return true;
 	}
 

@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-class HomeController extends Controller {
+class WelcomeController extends Controller {
 
 	/**
 	 * Create a new controller instance.
@@ -9,17 +9,17 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth');
+		$this->middleware('guest');
 	}
 
 	/**
-	 * Show the application dashboard to the user.
+	 * Show the application welcome screen to the user.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		return view('home');
+		return view('welcome');
 	}
 
 }

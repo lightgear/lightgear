@@ -11,8 +11,11 @@
 |
 */
 
-$router->get('/', 'HomeController@index');
+$router->get('/', 'WelcomeController@index');
+$router->get('/home', 'HomeController@index');
 
+
+// pages
 $router->resource('pages', 'Content\Pages');
 
 /*
@@ -27,6 +30,6 @@ $router->resource('pages', 'Content\Pages');
 */
 
 $router->controllers([
-	'auth' => 'AuthController',
-	'password' => 'PasswordController',
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
 ]);

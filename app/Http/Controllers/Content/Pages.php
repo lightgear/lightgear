@@ -3,7 +3,7 @@
 use Illuminate\Routing\Controller;
 
 use App\Data\Models\Page;
-use App\Http\Requests\PageFormRequest;
+use App\Http\Requests\Pages\FormRequest;
 
 class Pages extends Controller {
 
@@ -29,7 +29,7 @@ class Pages extends Controller {
      * Store a newly created resource in storage.
      *
      */
-    public function store(PageFormRequest $request, Page $page)
+    public function store(FormRequest $request, Page $page)
     {
         $page->create($request->all());
 
@@ -61,7 +61,7 @@ class Pages extends Controller {
      *
      * @param  int  $id
      */
-    public function update(PageFormRequest $request, Page $page)
+    public function update(FormRequest $request, Page $page)
     {
         $page->update($request->all());
 
