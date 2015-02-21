@@ -28,7 +28,9 @@ $app = require_once __DIR__.'/bootstrap/app.php';
 |
 */
 
-$status = $app->make('Illuminate\Contracts\Console\Kernel')->handle(
+$kernel = $app->make('Illuminate\Contracts\Console\Kernel');
+
+$status = $kernel->handle(
 	new Symfony\Component\Console\Input\ArgvInput,
 	new Symfony\Component\Console\Output\ConsoleOutput
 );

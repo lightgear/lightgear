@@ -24,18 +24,22 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		parent::boot($router);
 
-		// route model bindings
-		$router->model('pages', 'App\Data\Models\Page');
+        // route model bindings
+        $router->model('pages', 'App\Data\Models\Page');
 	}
 
 	/**
 	 * Define the routes for the application.
 	 *
+	 * @param  \Illuminate\Routing\Router  $router
 	 * @return void
 	 */
-	public function map()
+	public function map(Router $router)
 	{
-		$this->loadRoutesFrom(app_path('Http/routes.php'));
+		$router->group(['namespace' => $this->namespace], function($router)
+		{
+			require app_path('Http/routes.php');
+		});
 	}
 
 }

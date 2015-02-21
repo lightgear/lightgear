@@ -5,13 +5,13 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.x",
+		"laravel/framework": "5.0.*",
 		"illuminate/html": "~5.0.0",
 		"cviebrock/eloquent-sluggable": "3.0.0-alpha"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1"
+		"phpspec/phpspec": "~2.1"
 	},
 	"autoload": {
 		"classmap": [
@@ -21,11 +21,11 @@
 			"App\\": "app/"
 		}
 	},
-    "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php"
-        ]
-    },
+	"autoload-dev": {
+		"classmap": [
+			"tests/TestCase.php"
+		]
+	},
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",
@@ -36,12 +36,11 @@
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
-            "php -r \"copy('.env.example', '.env');\"",
+			"php -r \"copy('.env.example', '.env');\"",
 			"php artisan key:generate"
 		]
 	},
 	"config": {
 		"preferred-install": "dist"
-	},
-	"minimum-stability": "dev"
+	}
 }
