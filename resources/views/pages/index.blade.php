@@ -6,7 +6,7 @@
         @foreach ($pages as $page)
             {{ $page->title }} <br />
             {{ $page->slug }} <br />
-            {!! link_to_route('pages.edit', 'Edit (i18n)', $page) !!} <br />
+            {!! link_to_route('pages.edit', 'Edit (i18n)', $page->slug) !!} <br />
 
             @include('pages.forms.delete')
 

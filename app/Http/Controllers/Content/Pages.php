@@ -39,7 +39,7 @@ class Pages extends Controller {
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      */
     public function show($page)
     {
