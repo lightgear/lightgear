@@ -12,5 +12,11 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+
+    mix.scripts([
+        'jquery/dist/jquery.js',
+        'bootstrap/dist/js/bootstrap.js'
+    ], 'public/js/vendor.js', 'vendor/ui');
+
     mix.less('app.less');
 });

@@ -1,5 +1,5 @@
 {
-  "directory": "vendor/bower_components",
+  "directory": "vendor/ui",
   "scripts": {
     "postinstall": "gulp publish"
   }

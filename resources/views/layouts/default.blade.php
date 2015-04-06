@@ -1,14 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lightgear (i18n)</title>
 
-        <meta charset="utf-8">
-     </head>
+        <link href="/css/app.css" rel="stylesheet">
+    </head>
 
     <body>
 
         @yield('main')
 
+        <script src="{{ asset('/js/vendor.js') }}"></script>
     </body>
 </html>
