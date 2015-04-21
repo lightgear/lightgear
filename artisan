@@ -31,7 +31,7 @@ $app = require_once __DIR__.'/bootstrap/app.php';
 $kernel = $app->make('Illuminate\Contracts\Console\Kernel');
 
 $status = $kernel->handle(
-	new Symfony\Component\Console\Input\ArgvInput,
+	$input = new Symfony\Component\Console\Input\ArgvInput,
 	new Symfony\Component\Console\Output\ConsoleOutput
 );
 
@@ -45,5 +45,7 @@ $status = $kernel->handle(
 | down the process. This is the last thing to happen to the request.
 |
 */
+
+$kernel->terminate($input, $status);
 
 exit($status);
