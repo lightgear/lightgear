@@ -15,8 +15,13 @@ $router->get('/', 'WelcomeController@index');
 $router->get('/home', 'HomeController@index');
 
 
-// pages
-$router->resource('pages', 'Content\Pages');
+// protected routes
+
+$router->group(['middleware' => 'auth'], function ($router) {
+    $router->resource('pages', 'Content\Pages', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
+});
+
+$router->resource('pages', 'Content\Pages', ['only' => ['index', 'show']]);
 
 /*
 |--------------------------------------------------------------------------
