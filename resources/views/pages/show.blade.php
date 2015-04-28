@@ -1,2 +1,8 @@
-{{ $page->title }} <br />
-{{ $page->slug }}
+@extends ('app')
+
+@section ('content')
+
+    {{ $page->title }} <br />
+    {{ $page->slug }}
+
+@stop

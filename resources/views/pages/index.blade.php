@@ -1,6 +1,6 @@
-@extends ('layouts.default')
+@extends ('app')
 
-@section ('main')
+@section ('content')
 
     @if (count($pages))
         @foreach ($pages as $page)

@@ -1,6 +1,6 @@
-@extends ('layouts.default')
+@extends ('app')
 
-@section ('main')
+@section ('content')
 
     {!! Form::model($page, ['route' => 'pages.index']) !!}
         @include('pages.forms.resource')
