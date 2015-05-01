@@ -1,3 +1,5 @@
-{!! Form::model($page, ['route' => ['pages.destroy', $page->slug], 'method' => 'DELETE']) !!}
-    {!! Form::submit('Delete (i18n)') !!}
-{!! Form::close() !!}
+{!! FormBuilder::create('App\Forms\Content\Page',  [
+'route' => ['pages.update', $page->slug],
+'method' => 'DELETE',
+'model' => $page
+])->renderForm() !!}

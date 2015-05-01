@@ -150,6 +150,7 @@ return [
 		 * Third-party packages
 		 */
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+        'Kris\LaravelFormBuilder\FormBuilderServiceProvider',
 
         /**
          * Others
@@ -205,7 +206,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
-		'Form'		=> 'Illuminate\Html\FormFacade'
+		'Form'		=> 'Illuminate\Html\FormFacade',
+        'FormBuilder' => 'Kris\LaravelFormBuilder\Facades\FormBuilder'
 
 	],
 

@@ -1,4 +1,1 @@
-{!! Form::label('title', 'Title (i18n)') !!}
-{!! Form::text('title') !!}
-
-{!! Form::submit('Save') !!}
+{!! FormBuilder::create('App\Forms\Content\Page')->renderForm() !!}

@@ -2,8 +2,9 @@
 
 @section ('content')
 
-    {!! Form::model($page, ['route' => ['pages.update', $page->slug], 'method' => 'PATCH']) !!}
-        @include('pages.forms.resource')
-    {!! Form::close() !!}
-
+    {!! FormBuilder::create('App\Forms\Content\Page',  [
+                    'route' => ['pages.update', $page->slug],
+                    'method' => 'PATCH',
+                    'model' => $page
+                    ])->renderForm() !!}
 @stop
